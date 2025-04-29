@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "title": "Product 1",
+        "price": 10.99,
+        "img": "./coffee-mug.png"
+    },
+    {
+        "id": "2",
+        "title": "Product 2",
+        "price": 11.99,
+        "img": "./coffee-mug.png"
+    },
+    {
+        "id": "13",
+        "title": "Product 3",
+        "price": 100.79,
+        "img": "./coffee-mug.png"
+    },
+    {
+        "id": "14",
+        "title": "Product 4",
+        "price": 100.79,
+        "img": "./coffee-mug.png"
+    },
+    {
+        "id": "15",
+        "title": "Product 5",
+        "price": 100.79,
+        "img": "./coffee-mug.png"
+    }
+]
