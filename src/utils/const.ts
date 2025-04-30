@@ -36,26 +36,29 @@ export const FAKE_API = {
             "id": "2",
             "title": "Product 2",
             "price": 11.99,
-            "img": "./coffee-mug.png"
+            "img": "./coffee-mug2.png"
         },
-        {
-            "id": "13",
-            "title": "Product 3",
-            "price": 100.79,
-            "img": "./coffee-mug.png"
-        },
-       /*  {
-            "id": "14",
-            "title": "Product 4",
-            "price": 100.79,
-            "img": "./coffee-mug.png"
-        },
-        {
-            "id": "15",
-            "title": "Product 5",
-            "price": 100.79,
-            "img": "./coffee-mug.png"
-        } */
     ]
+}
+
+export const CART_STYLE = {
+    shoppingCart: {
+        backgroundColor: 'var(--color-light-black)',
+        height: '100%',
+        position: 'fixed' as const,
+        right: '10px',
+        top: '0',
+        width: '150px',
+        zIndex: '100',
+    },
+    productCardCart: {
+        width: '100px',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+    }
+}
+
+export const PRODUCT_COUNT = {
+    MIN_VALUE: 0,
 }
 
