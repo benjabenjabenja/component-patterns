@@ -44,7 +44,7 @@ export const FAKE_API = {
             "price": 100.79,
             "img": "./coffee-mug.png"
         },
-        {
+       /*  {
             "id": "14",
             "title": "Product 4",
             "price": 100.79,
@@ -55,7 +55,7 @@ export const FAKE_API = {
             "title": "Product 5",
             "price": 100.79,
             "img": "./coffee-mug.png"
-        }
+        } */
     ]
 }
 

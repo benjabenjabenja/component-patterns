@@ -5,13 +5,18 @@ import { ProductContext } from "./ProductCard";
 import { PRODUCT_CARD, SIMBOLOS } from "../../../utils/const";
 //Styles:
 import styles from '../../styles/styles.module.css';
+import '../../styles/custom-styles.css';
 
 
-const ProductButtons: React.FC = () => {
+export interface ProductButtonsProps {
+    className?: string;
+}
+
+const ProductButtons: React.FC<ProductButtonsProps> = ({ className }) => {
     const { count, increaseBy } = useContext(ProductContext);
 
     return (
-        <div className={styles.buttonsContainer}>
+        <div className={`${styles.buttonsContainer} ${className}`}>
 
             <button
                 className={styles.buttonMinus}

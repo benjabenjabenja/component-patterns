@@ -1,0 +1,16 @@
+:root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-light-black: rgb(56,56,56);
+    --color-dark-black: rgb(36,36,36);
+
+    --color-react-blue: #70D1F8;
+
+    --padding-default: 12px;
+    --margin-default: 12px;
+
+    --font-size-default: 16px;
+    --font-size-small: 14px;
+    --font-size-large: 20px;
+    
+}

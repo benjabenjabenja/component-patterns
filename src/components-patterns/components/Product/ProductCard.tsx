@@ -23,9 +23,11 @@ const { Provider } = ProductContext;
 export interface ProductCardProps {
     product: Product;
     children?: ReactElement | ReactElement[];
+    className?: string;
+    style?: React.CSSProperties;
 }
 
-export const ProductCard = ({ product, children }: ProductCardProps) => {
+export const ProductCard = ({ product, children, className, style }: ProductCardProps) => {
     const { count, increaseBy } = useProduct();
 
     return (
@@ -35,17 +37,17 @@ export const ProductCard = ({ product, children }: ProductCardProps) => {
             product
         }}>
 
-            <div className={styles.productCard}>
+            <div className={`${styles.productCard} ${className}`} style={style}>
 
                 { children ? children : (
                     <>
-                        <ProductImage />
+                        <ProductImage className='custom-image' />
 
-                        <ProductTitle title={product.title} />
+                        <ProductTitle className='text-dark text-bold' title={product.title} />
                         
-                        <ProductPrice />
+                        <ProductPrice className='text-dark text-bold' />
 
-                        <ProductButtons /> 
+                        <ProductButtons className='custom-buttons-dark' /> 
                     </>
                 )}
 

@@ -11,9 +11,10 @@ import styles from '../../styles/styles.module.css';
 
 export interface ProductImageProps {
     img?: string;
+    className?: string;
 }
 
-const ProductImage: React.FC<ProductImageProps> = ({ img = '' }) => {
+const ProductImage: React.FC<ProductImageProps> = ({ img = '', className }) => {
     const { product } = useContext(ProductContext);
 
     let imgToShow: string;
@@ -27,7 +28,7 @@ const ProductImage: React.FC<ProductImageProps> = ({ img = '' }) => {
 
     return (
         <img
-            className={styles.productImg}
+            className={`${styles.productImg} ${className}`}
             src={imgToShow}
             width={PRODUCT_CARD.IMAGE_WIDTH}
             alt={(img || product?.img) ? PRODUCT_CARD.IMAGE_ALT : PRODUCT_CARD.NO_IMAGE_CONTENT} />

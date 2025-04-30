@@ -1,9 +1,9 @@
 
 
 .productCard {
-    background-color: white;
+    background-color: var(--color-white);
     border-radius: 15px;
-    color: black;
+    color: var(--color-black);
     padding-bottom: 5px;
     width: 250px;
     margin-right: 5px;
@@ -28,7 +28,7 @@
 .buttonMinus {
     cursor: pointer;
     background-color: transparent;
-    border: 1px solid black;
+    border: 1px solid var(--color-black);
     border-radius: 5px 0px 0px 5px;
     font-size: 20px;
     width: 30px;
@@ -39,8 +39,8 @@
 }
 
 .countLabel {
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
+    border-bottom: 1px solid var(--color-black);
+    border-top: 1px solid var(--color-black);
     font-size: 16px;
     height: 25px;
     padding-top: 5px;
@@ -51,7 +51,7 @@
 .buttonAdd {
     cursor: pointer;
     background-color: transparent;
-    border: 1px solid black;
+    border: 1px solid var(--color-black);
     border-radius: 0px 5px 5px 0px;
     font-size: 20px;
     width: 30px;

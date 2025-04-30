@@ -15,6 +15,6 @@ export const routes: IRoute[] = [
         Component: ShoppingPage,
         name: 'Shopping',
         to: '',
-    },
+    }
 ];
 
