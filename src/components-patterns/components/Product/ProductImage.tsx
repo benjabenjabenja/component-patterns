@@ -1,13 +1,12 @@
-import { useContext } from "react";
+import { useContext } from 'react';
 //Assets:
 import NoImage from '../../assets/no-image.jpg';
 //Context:
-import { ProductContext } from "./ProductCard";
+import { ProductContext } from '../../Context/ProductContext';
 //Utils:
-import { PRODUCT_CARD } from "../../../utils/const";
+import { PRODUCT_CARD } from '../../../utils/const';
 //Styles:
 import styles from '../../styles/styles.module.css';
-
 
 export interface ProductImageProps {
     img?: string;
@@ -20,8 +19,8 @@ const ProductImage: React.FC<ProductImageProps> = ({ img = '', className }) => {
     let imgToShow: string;
     if (img) {
         imgToShow = img;
-    } else if (product.img) {
-        imgToShow = product.img;
+    } else if (product?.img) {
+        imgToShow = product?.img;
     } else {
         imgToShow = NoImage;
     }

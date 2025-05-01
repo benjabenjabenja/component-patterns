@@ -1,6 +1,6 @@
-import { useContext } from "react";
+import { useContext } from 'react';
 //Context:
-import { ProductContext } from "./ProductCard";
+import { ProductContext } from '../../Context/ProductContext';
 //Styles:
 import styles from '../../styles/styles.module.css';
 
@@ -12,7 +12,7 @@ export interface ProductTitleProps {
 const ProductTitle: React.FC<ProductTitleProps> = ({ title, className }) => {
     const { product } = useContext(ProductContext);
     return (
-        <span className={`${styles.productDescription} ${className}`}> {title || product.title} </span>
+        <span className={`${styles.productDescription} ${className}`}> {title || product?.title} </span>
     )
 }
 

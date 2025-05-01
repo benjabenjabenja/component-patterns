@@ -20,6 +20,8 @@ export const PRODUCT_CARD = {
     VALUE_INCREASE: 1,
     DEFAULT_COUNT: 0,
     NO_TITLE: 'No title',
+    DEFAULT_COUNT_PRODUCT: 4,
+    MAX_COUNT_PRODUCT: 10,
 }
 
 export const PRODUCT_LIST = {

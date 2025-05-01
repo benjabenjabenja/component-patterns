@@ -35,3 +35,10 @@
     color: var(--color-black);
 }
 
+button[disabled].-right-border {
+    border-right-color: var(--color-black) !important;
+}
+
+button[disabled].-left-border {
+    border-left-color: var(--color-black) !important;
+}

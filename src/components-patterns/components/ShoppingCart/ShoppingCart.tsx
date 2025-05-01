@@ -28,17 +28,24 @@ const ShoppingCart: React.FC<ShoppingCartProps> = (props: ShoppingCartProps) => 
                     onProductCountChange={onProductCountChange}
                     value={product?.quantity}
                 >
+                    {() => (
+                        <>
+                            <ProductCard.Image className='custom-image' img={product.img} />
+                            <ProductCard.Buttons className='custom-buttons' />
+                        </>
+                    )}
                 
-                    <ProductCard.Image className='custom-image' img={product.img} />
-                    <ProductCard.Buttons className='custom-buttons' />
+
                 
                 </ProductCard>
             ))}
 
             <div style={{ ...CART_STYLE.totalContainer }}>
+
                 <h3>{SHOPPING_PAGE.TOTAL}</h3>
                 <p>{SIMBOLOS.DOLLAR} {total}</p>
                 <p>{SHOPPING_PAGE.TOTAL_QUANTITY}: {totalQuantity}</p>
+                
             </div>
         </div>
     )

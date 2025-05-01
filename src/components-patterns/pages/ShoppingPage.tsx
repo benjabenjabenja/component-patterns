@@ -1,12 +1,10 @@
 //Components:
-import { ProductList } from '../components';
-import ShoppingCart from '../components/ShoppingCart/ShoppingCart';
+import { ProductButtons, ProductCard, ProductImage, ProductPrice, ProductTitle } from '../components';
 //Hooks:
 import { useProducts } from '../hooks/useProducts';
 import { Product } from '../hooks/useProduct';
-import { useShoppingCart } from '../hooks/useShoppingCart';
 //Utils:
-import { SHOPPING_PAGE } from '../../utils/const';
+import { PRODUCT_CARD, SHOPPING_PAGE } from '../../utils/const';
 //Styles:
 import styles from '../styles/styles.module.css';
 import '../../styles/variables.css'
@@ -21,12 +19,7 @@ export interface ShoppingCartState {
 
 export const ShoppingPage: React.FC = () => {
     const { products } = useProducts();
-    const {
-        cart,
-        total,
-        totalQuantity,
-        onProductCountChange
-    } = useShoppingCart();
+    const product = products[0];
     
     return (
         <div>
@@ -34,19 +27,29 @@ export const ShoppingPage: React.FC = () => {
 
             <main className={styles.shoppingPageMain}>
 
-                {/* PRODUCTS LIST */}
-                <ProductList
-                    products={products}
-                    onProductCountChange={onProductCountChange}
-                    value={cart} />
+                <ProductCard
+                    key={product?.id}
+                    product={product && product}
+                    className='text-dark'
+                    style={{ backgroundColor: 'var(--color-react-blue)', color: 'var(--color-black)' }}
+                    initialValues={{
+                        count: PRODUCT_CARD.DEFAULT_COUNT_PRODUCT,
+                        maxCount: PRODUCT_CARD.MAX_COUNT_PRODUCT
+                    }}
+                >
+                    {() => (
+                        <>
+                            <ProductImage className='custom-image' />
 
-                {/* CART */}
-                <ShoppingCart
-                    cart={cart}
-                    total={total}
-                    totalQuantity={totalQuantity}
-                    onProductCountChange={onProductCountChange}
-                />
+                            <ProductTitle className='text-dark text-bold' title={product?.title} />
+                            
+                            <ProductPrice className='text-dark text-bold' />
+
+                            <ProductButtons className='custom-buttons-dark' /> 
+                        </>
+                    )}
+                </ProductCard>
+
 
             </main>
         </div>

@@ -1,4 +1,4 @@
-import { ProductCard } from '../index';
+// import { ProductCard } from '../index';
 //Utils:
 import { PRODUCT_LIST } from "../../../utils/const";
 //Interface:
@@ -33,14 +33,17 @@ const ProductList: React.FC<ProductListProps> = ({ products, onProductCountChang
     return (
         <>     
             {products.length && products.map(product => (
-                <ProductCard
-                    key={product.id}
-                    product={product}
-                    className='text-dark'
-                    style={{ backgroundColor: 'var(--color-react-blue)', color: 'var(--color-black)' }}
-                    onProductCountChange={onProductCountChange}
-                    value={value?.[product.id]?.quantity || 0}
-                />
+                <>
+                    {/* <ProductCard
+                        key={product.id}
+                        product={product}
+                        className='text-dark'
+                        style={{ backgroundColor: 'var(--color-react-blue)', color: 'var(--color-black)' }}
+                        onProductCountChange={onProductCountChange}
+                        value={value?.[product.id]?.quantity || 0}
+                    /> */}
+                    <h1>Descomentar</h1>
+                </>
             ))}
             
             {!products.length && <h2>{PRODUCT_LIST.NO_PRODUCTS}</h2>}
