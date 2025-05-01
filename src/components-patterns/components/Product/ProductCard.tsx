@@ -26,10 +26,11 @@ export interface ProductCardProps {
     className?: string;
     style?: React.CSSProperties;
     onProductCountChange?: (product: Product, newCount: number) => void;
+    value?: number;
 }
 
-export const ProductCard = ({ product, children, className, style, onProductCountChange }: ProductCardProps) => {
-    const { count, increaseBy } = useProduct({ product, onProductCountChange });
+export const ProductCard = ({ product, children, className, style, onProductCountChange, value }: ProductCardProps) => {
+    const { count, increaseBy } = useProduct({ product, onProductCountChange, value });
 
     return (
         <Provider value={{

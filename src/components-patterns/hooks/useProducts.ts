@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { Product } from "./useProduct"
 //Services:
-// import * as api from '../../services/api'
 import { FAKE_API } from "../../utils/const";
 
 export const useProducts = () => {
@@ -9,8 +8,7 @@ export const useProducts = () => {
     const [loading, setLoading] = useState(false);
 
     const getProducts = async () => {
-        // const products = await api.getProductsList();
-        // console.log({products});
+
         setProducts(FAKE_API.PRODUCTS_LIST);
     }
 

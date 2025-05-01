@@ -1,10 +1,13 @@
 export const SIMBOLOS = {
     MINUS: '-',
     PLUS: '+',
+    DOLLAR: '$',
 }
 
 export const SHOPPING_PAGE = {
     TITLE: 'Shopping Page',
+    TOTAL: 'Total',
+    TOTAL_QUANTITY: 'Total Quantity',
 }
 
 export const PRODUCT_CARD = {
@@ -46,7 +49,7 @@ export const CART_STYLE = {
         backgroundColor: 'var(--color-light-black)',
         height: '100%',
         position: 'fixed' as const,
-        right: '10px',
+        right: '0',
         top: '0',
         width: '150px',
         zIndex: '100',
@@ -55,6 +58,13 @@ export const CART_STYLE = {
         width: '100px',
         marginLeft: 'auto',
         marginRight: 'auto',
+    },
+    totalContainer: {
+        backgroundColor: 'transparent',
+        height: '100%',
+        position: 'fixed' as const,
+        right: '10px',
+        margin: '0 auto',
     }
 }
 
