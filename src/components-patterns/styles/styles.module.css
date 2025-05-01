@@ -1,4 +1,6 @@
-
+button {
+    cursor: pointer;
+}
 
 .productCard {
     background-color: var(--color-white);
@@ -74,3 +76,42 @@ button[disabled] {
     gap: .7rem;
     width: 100%;
 }
+
+.extraInfoCard {
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+}
+
+.contenedorBotones {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .7rem;
+    margin-left: .7rem;
+}
+
+.contenedorBotones button {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-black);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.contenedorInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .7rem;
+    padding: 1rem;
+}
+
+.resetButton {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-black);
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: .7rem;
+    margin-right: .7rem;
+}
+

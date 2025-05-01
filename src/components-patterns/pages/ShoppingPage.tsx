@@ -37,7 +37,7 @@ export const ShoppingPage: React.FC = () => {
                         maxCount: PRODUCT_CARD.MAX_COUNT_PRODUCT
                     }}
                 >
-                    {({ count, isMaxCountReached, isMinCountReached, maxCount, product, increaseBy, reset }) => (
+                    {({ count, isMaxCountReached, isMinCountReached, maxCount, minCount, product, increaseBy, reset }) => (
                         <>
                             <ProductImage className='custom-image' />
 
@@ -47,13 +47,24 @@ export const ShoppingPage: React.FC = () => {
 
                             <ProductButtons className='custom-buttons-dark' /> 
 
-                            <button onClick={reset}>{ PRODUCT_CARD.RESET}</button>
+                            <div className={styles.extraInfoCard}>
 
-                            <button onClick={() => increaseBy(PRODUCT_CARD.VALUE_DISCOUNT_TWO)}>{ PRODUCT_CARD.VALUE_DISCOUNT_TWO}</button>
+                                <div className={styles.contenedorBotones}>
+                                    {!isMinCountReached && <button onClick={() => increaseBy(PRODUCT_CARD.VALUE_DISCOUNT_TWO)}>{SIMBOLOS.MINUS} {PRODUCT_CARD.VALUE_DISCOUNT_TWO.toString().split('-')[1]}</button>}
+                                    
+                                    <span>{SIMBOLOS.SPACE} <strong>{count}</strong> {SIMBOLOS.SPACE}</span>
 
-                            {!isMaxCountReached && <button onClick={() => increaseBy(PRODUCT_CARD.VALUE_INCREASE_TWO)}>{SIMBOLOS.PLUS} {PRODUCT_CARD.VALUE_INCREASE_TWO}</button>}
+                                    {!isMaxCountReached && <button onClick={() => increaseBy(PRODUCT_CARD.VALUE_INCREASE_TWO)}>{SIMBOLOS.PLUS} {PRODUCT_CARD.VALUE_INCREASE_TWO}</button>}
+                                </div>
+                                    
+                                <button className={styles.resetButton} onClick={reset}>{ PRODUCT_CARD.RESET}</button>
 
-                            {SIMBOLOS.SPACE + count}
+                                <div className={styles.contenedorInfo}>
+                                    <span>{SHOPPING_PAGE.MAX_COUNT} <strong>{maxCount}</strong></span>
+                                    <span>{SHOPPING_PAGE.MIN_COUNT} <strong>{minCount}</strong></span>
+                                </div>
+                            </div>
+
                         </>
                     )}
                 </ProductCard>

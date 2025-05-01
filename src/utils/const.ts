@@ -9,6 +9,8 @@ export const SHOPPING_PAGE = {
     TITLE: 'Shopping Page',
     TOTAL: 'Total',
     TOTAL_QUANTITY: 'Total Quantity',
+    MAX_COUNT: 'Max Count: ',
+    MIN_COUNT: 'Min Count: ',
 }
 
 export const PRODUCT_CARD = {

@@ -59,6 +59,7 @@ const useProduct = (props: UseProductProps) => {
         isMaxCountReached: !!initialValues?.maxCount && count === initialValues.maxCount,
         isMinCountReached: count === PRODUCT_COUNT.MIN_VALUE,
         maxCount: initialValues?.maxCount,
+        minCount: PRODUCT_COUNT.MIN_VALUE,
         reset
     };
 }

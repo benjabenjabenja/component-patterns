@@ -10,6 +10,7 @@ export interface ProductCardsHandlers {
     isMaxCountReached: boolean;
     isMinCountReached: boolean;
     maxCount?: number;
+    minCount: number;
     product: Product;
     increaseBy: (value: number) => void;
     reset: () => void;
@@ -48,6 +49,7 @@ export const ProductCard = (props: ProductCardProps) => {
         isMaxCountReached,
         isMinCountReached,
         maxCount,
+        minCount,
         reset
     } = useProduct({ product, onProductCountChange, value, initialValues });
 
@@ -65,6 +67,7 @@ export const ProductCard = (props: ProductCardProps) => {
                     isMaxCountReached,
                     isMinCountReached,
                     maxCount,
+                    minCount,
                     product,
                     increaseBy,
                     reset
