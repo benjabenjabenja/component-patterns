@@ -1,15 +1,15 @@
 //Components:
 import { ProductList } from '../components';
-//Utils:
-import { PRODUCT_LIST, SHOPPING_PAGE } from '../../utils/const';
-//Styles:
-import styles from '../styles/styles.module.css';
-import '../../styles/variables.css'
+import ShoppingCart from '../components/ShoppingCart/ShoppingCart';
 //Hooks:
 import { useProducts } from '../hooks/useProducts';
 import { Product } from '../hooks/useProduct';
 import { useShoppingCart } from '../hooks/useShoppingCart';
-import ShoppingCart from '../components/ShoppingCart/ShoppingCart';
+//Utils:
+import { SHOPPING_PAGE } from '../../utils/const';
+//Styles:
+import styles from '../styles/styles.module.css';
+import '../../styles/variables.css'
 
 export interface ProductInCart extends Product { 
     quantity: number;

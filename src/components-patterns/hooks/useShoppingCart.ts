@@ -7,28 +7,14 @@ import { Product } from './useProduct';
 import { PRODUCT_COUNT } from '../../utils/const';
 
 export const useShoppingCart = () => {
-
     const [cart, setCart] = useState<ShoppingCartState>({});	
     const [total, setTotal] = useState(0);
 
     const onProductCountChange = (product: Product, count: number) => {
         setCart(prev => {
             const productInCart: ProductInCart = prev[product.id] || { ...product, quantity: PRODUCT_COUNT.MIN_VALUE };
-            const validatedCount = Math.max(productInCart.quantity + count, PRODUCT_COUNT.MIN_VALUE);
-
-            if (validatedCount > 0) {
-                return {
-                    ...prev, [product.id]: {
-                        ...productInCart,
-                        quantity: validatedCount
-                    }
-                };
-            }
-
-            const { [product.id]: _, ...rest } = prev;
-            return rest;
-
-           /*  if (count === 0) {
+            
+            if (count === 0) {
                 const { [product.id]: _, ...rest } = prev;
                 return rest;
             }
@@ -38,7 +24,7 @@ export const useShoppingCart = () => {
                     ...productInCart,
                     quantity: count
                 }
-            }; */
+            };
         });
     }
 

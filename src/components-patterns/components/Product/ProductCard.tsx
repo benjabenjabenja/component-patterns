@@ -1,8 +1,4 @@
 import { createContext, ReactElement } from 'react'
-//Hooks:
-import useProduct, { Product } from '../../hooks/useProduct';
-//Styles:
-import styles from '../../styles/styles.module.css';
 //Components:
 import {
     ProductImage,
@@ -10,6 +6,10 @@ import {
     ProductPrice,
     ProductButtons
 } from '../../components';
+//Hooks:
+import useProduct, { Product } from '../../hooks/useProduct';
+//Styles:
+import styles from '../../styles/styles.module.css';
 
 export interface ProductContextProps {
     count: number;

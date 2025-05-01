@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 //Utils:
 import { PRODUCT_COUNT } from '../../utils/const';
 
@@ -20,14 +20,8 @@ const useProduct = (props: UseProductProps) => {
 
     const [count, setCount] = useState<number>(value);
 
-    const ref = useRef( !!onProductCountChange );
-
     const increaseBy = useCallback((value: number) => {
-
-        if (ref.current) {
-            return onProductCountChange!(product, value);
-        }
-                
+     
         const newCount = Math.max(count + value, PRODUCT_COUNT.MIN_VALUE);
         setCount(newCount);
 

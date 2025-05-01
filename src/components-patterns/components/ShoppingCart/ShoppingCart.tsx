@@ -1,11 +1,11 @@
 import React from 'react'
-//Utils:
-import { CART_STYLE, SHOPPING_PAGE, SIMBOLOS } from '../../../utils/const'
 //Components:
 import { ProductCard } from '../index';
 //Hooks:
 import { Product } from '../../hooks/useProduct';
 import { ShoppingCartState } from '../../pages/ShoppingPage';
+//Utils:
+import { CART_STYLE, SHOPPING_PAGE, SIMBOLOS } from '../../../utils/const'
 
 interface ShoppingCartProps {
     cart: ShoppingCartState;
