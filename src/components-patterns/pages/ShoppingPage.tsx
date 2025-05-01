@@ -20,7 +20,7 @@ export interface ShoppingCartState {
 }
 
 export const ShoppingPage: React.FC = () => {
-    const { products, loading } = useProducts();
+    const { products } = useProducts();
     const {
         cart,
         total,
@@ -35,12 +35,10 @@ export const ShoppingPage: React.FC = () => {
             <main className={styles.shoppingPageMain}>
 
                 {/* PRODUCTS LIST */}
-                {products.length && !loading ? (
-                    <ProductList
-                        products={products}
-                        onProductCountChange={onProductCountChange}
-                        value={cart} />
-                ) : <h2>{PRODUCT_LIST.LOADING}</h2> }
+                <ProductList
+                    products={products}
+                    onProductCountChange={onProductCountChange}
+                    value={cart} />
 
                 {/* CART */}
                 <ShoppingCart

@@ -53,6 +53,9 @@ export const CART_STYLE = {
         top: '0',
         width: '150px',
         zIndex: '100',
+        display: 'flex' as const,
+        flexDirection: 'column' as const,
+        justifyContent: 'space-between' as const,
     },
     productCardCart: {
         width: '100px',
@@ -61,10 +64,7 @@ export const CART_STYLE = {
     },
     totalContainer: {
         backgroundColor: 'transparent',
-        height: '100%',
-        position: 'fixed' as const,
-        right: '10px',
-        margin: '0 auto',
+        margin: 'auto auto 0 auto',
     }
 }
 
