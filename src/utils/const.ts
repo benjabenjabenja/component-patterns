@@ -2,6 +2,7 @@ export const SIMBOLOS = {
     MINUS: '-',
     PLUS: '+',
     DOLLAR: '$',
+    SPACE: ' ',
 }
 
 export const SHOPPING_PAGE = {
@@ -18,10 +19,13 @@ export const PRODUCT_CARD = {
     MIN_VALUE_COUNT: 1,
     VALUE_DISCOUNT: -1,
     VALUE_INCREASE: 1,
+    VALUE_INCREASE_TWO: 2,
+    VALUE_DISCOUNT_TWO: -2,
     DEFAULT_COUNT: 0,
     NO_TITLE: 'No title',
-    DEFAULT_COUNT_PRODUCT: 4,
+    DEFAULT_COUNT_PRODUCT: 1,
     MAX_COUNT_PRODUCT: 10,
+    RESET: 'Reset',
 }
 
 export const PRODUCT_LIST = {

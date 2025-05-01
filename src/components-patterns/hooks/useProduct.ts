@@ -49,10 +49,17 @@ const useProduct = (props: UseProductProps) => {
 
     }, [value, initialValues]);
 
+    const reset = () => { 
+        setCount(initialValues?.count || PRODUCT_COUNT.MIN_VALUE);
+    }
+
     return {
         count,
         increaseBy,
-        maxCount: initialValues?.maxCount
+        isMaxCountReached: !!initialValues?.maxCount && count === initialValues.maxCount,
+        isMinCountReached: count === PRODUCT_COUNT.MIN_VALUE,
+        maxCount: initialValues?.maxCount,
+        reset
     };
 }
 
