@@ -46,9 +46,9 @@ export const ProductCard = ({ product, children, className, style, onProductCoun
 
                         <ProductTitle className='text-dark text-bold' title={product.title} />
                         
-                        <ProductPrice className='text-dark text-bold' />
+                        <ProductPrice className='text-dark text-bold text-left' />
 
-                        <ProductButtons className='custom-buttons-dark' /> 
+                        <ProductButtons className='custom-buttons-dark' style={{ display: 'flex', justifyContent: 'center' }} /> 
                     </>
                 )}
 

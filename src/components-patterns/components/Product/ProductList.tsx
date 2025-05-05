@@ -1,7 +1,4 @@
-//Hooks:
-import useProducts from "../../hooks/useProducts";
 //Components:
-//import { ProductCard } from '../Product/ProductCard'
 import { ProductCard } from '../index';
 //Utils:
 import { PRODUCT_LIST } from "../../../utils/const";
@@ -14,6 +11,7 @@ import { ProductPriceProps } from "./ProductPrice";
 //Styles:
 import '../../styles/custom-styles.css';
 import '../../../styles/variables.css';
+//Hooks:
 import { Product } from "../../hooks/useProduct";
 
 
@@ -31,22 +29,21 @@ interface ProductListProps {
 }
 
 const ProductList: React.FC<ProductListProps> = ({ products, onProductCountChange }) => {
-
     return (
         <>
-                       
-            {products.length && products.map(product => (
-                <ProductCard
-                    key={product.id}
-                    product={product}
-                    className='text-dark'
-                    style={{ backgroundColor: 'var(--color-react-blue)', color: 'var(--color-black)' }}
-                    onProductCountChange={onProductCountChange}
-                />
-            ))}
-            
-            
-            {!products.length && <h2>{PRODUCT_LIST.NO_PRODUCTS}</h2>}
+            {products.length > 0 ? (
+                products.map(product => (
+                    <ProductCard
+                        key={product.id}
+                        product={product}
+                        className='text-dark'
+                        style={{ backgroundColor: 'var(--color-react-blue)', color: 'var(--color-black)' }}
+                        onProductCountChange={onProductCountChange}
+                    />
+                ))
+            ) : (
+                <h2>{PRODUCT_LIST.NO_PRODUCTS}</h2>
+            )}
         </>
     )
 }

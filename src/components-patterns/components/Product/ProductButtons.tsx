@@ -10,13 +10,14 @@ import '../../styles/custom-styles.css';
 
 export interface ProductButtonsProps {
     className?: string;
+    style?: React.CSSProperties;
 }
 
-const ProductButtons: React.FC<ProductButtonsProps> = ({ className }) => {
+const ProductButtons: React.FC<ProductButtonsProps> = ({ className, style }) => {
     const { count, increaseBy } = useContext(ProductContext);
 
     return (
-        <div className={`${styles.buttonsContainer} ${className}`}>
+        <div className={`${styles.buttonsContainer} ${className}`} style={style}>
 
             <button
                 className={styles.buttonMinus}

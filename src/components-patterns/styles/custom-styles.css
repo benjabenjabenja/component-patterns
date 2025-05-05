@@ -35,3 +35,8 @@
     color: var(--color-black);
 }
 
+.text-left {
+    text-align: left;
+}
+
+

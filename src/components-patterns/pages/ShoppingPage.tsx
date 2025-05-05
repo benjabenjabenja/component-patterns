@@ -1,8 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 //ComponeProductCard, nts:
 import { ProductCard, ProductList } from '../components';
 //Utils:
-import { CART_STYLE, FAKE_API, PRODUCT_LIST, SHOPPING_PAGE } from '../../utils/const';
+import {
+    CART_STYLE,
+    PRODUCT_COUNT,
+    PRODUCT_LIST,
+    SHOPPING_PAGE
+} from '../../utils/const';
 //Styles:
 import styles from '../styles/styles.module.css';
 import '../../styles/variables.css'
@@ -25,6 +30,10 @@ export const ShoppingPage: React.FC = () => {
     const onProductCountChange = (product: Product, count: number) => {
         setCart(prev => {
             const productInCart: ProductInCart = prev[product.id] || { ...product, quantity: count };
+            if (count === PRODUCT_COUNT.MIN_VALUE) {
+                const { [product.id]: _, ...rest } = prev;
+                return rest;
+            }
             return { ...prev, [product.id]: productInCart };
         });
     }
