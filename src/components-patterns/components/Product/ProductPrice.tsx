@@ -2,7 +2,7 @@ import { useContext } from "react";
 //Context:
 import { ProductContext } from "./ProductCard";
 //Utils:
-import { PRODUCT_CARD } from "../../../utils/const";
+import { PRODUCT_CARD, SIMBOLOS } from "../../../utils/const";
 
 
 export interface ProductPriceProps {
@@ -12,7 +12,7 @@ export interface ProductPriceProps {
 const ProductPrice: React.FC<ProductPriceProps> = ({ className }) => {
     const { count, product } = useContext(ProductContext);
     return (
-        <small className={`${className}`}> ${count > PRODUCT_CARD.MIN_VALUE_COUNT ?
+        <small className={`${className}`}> {SIMBOLOS.DOLLAR} {count > PRODUCT_CARD.MIN_VALUE_COUNT ?
             Math.abs(product.price * count) :
             Math.abs(product.price)}
         </small>

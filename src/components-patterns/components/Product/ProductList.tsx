@@ -1,4 +1,3 @@
-//Components:
 import { ProductCard } from '../index';
 //Utils:
 import { PRODUCT_LIST } from "../../../utils/const";
@@ -8,12 +7,12 @@ import { ProductImageProps } from "./ProductImage";
 import { ProductCardProps } from "./ProductCard";
 import { ProductButtonsProps } from "./ProductButtons";
 import { ProductPriceProps } from "./ProductPrice";
+import { ShoppingCartState } from '../../pages/ShoppingPage';
+//Hooks:
+import { Product } from "../../hooks/useProduct";
 //Styles:
 import '../../styles/custom-styles.css';
 import '../../../styles/variables.css';
-//Hooks:
-import { Product } from "../../hooks/useProduct";
-
 
 export interface ProductCardHOCProps { 
     (props: ProductCardProps): JSX.Element;
@@ -25,25 +24,26 @@ export interface ProductCardHOCProps {
 
 interface ProductListProps {
     products: Product[];
-    onProductCountChange: (product: Product, newCount: number) => void;
+    onProductCountChange?: (product: Product, newCount: number) => void;
+    value?: ShoppingCartState;
 }
 
-const ProductList: React.FC<ProductListProps> = ({ products, onProductCountChange }) => {
+const ProductList: React.FC<ProductListProps> = ({ products, onProductCountChange, value }) => {
+
     return (
-        <>
-            {products.length > 0 ? (
-                products.map(product => (
-                    <ProductCard
-                        key={product.id}
-                        product={product}
-                        className='text-dark'
-                        style={{ backgroundColor: 'var(--color-react-blue)', color: 'var(--color-black)' }}
-                        onProductCountChange={onProductCountChange}
-                    />
-                ))
-            ) : (
-                <h2>{PRODUCT_LIST.NO_PRODUCTS}</h2>
-            )}
+        <>     
+            {products.length && products.map(product => (
+                <ProductCard
+                    key={product.id}
+                    product={product}
+                    className='text-dark'
+                    style={{ backgroundColor: 'var(--color-react-blue)', color: 'var(--color-black)' }}
+                    onProductCountChange={onProductCountChange}
+                    value={value?.[product.id]?.quantity || 0}
+                />
+            ))}
+            
+            {!products.length && <h2>{PRODUCT_LIST.NO_PRODUCTS}</h2>}
         </>
     )
 }
