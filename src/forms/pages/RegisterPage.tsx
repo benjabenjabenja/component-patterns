@@ -2,6 +2,7 @@ import React from 'react';
 //Hooks:
 import { useForm } from '../hooks/useForm';
 //Utils:
+import Utils from '../../utils/utils';
 import {
     DEFAULT_STATE_REGISTER_FORM,
     REGISTER_PAGE,
@@ -12,7 +13,6 @@ import { METHODS, SIMBOLS } from '../../utils/enum';
 //Styles: 
 import styles from './RegisterPage.module.css';
 import '../styles/styles.css';
-import Utils from '../../utils/utils';
 
 const ErrorLabel = ({ children }: { children: React.ReactNode }) => (<span>{children}</span>);
 
@@ -41,10 +41,10 @@ const RegisterPage: React.FC = () => {
     }
 
   return (
-      <div>
-          <h1>{REGISTER_PAGE.TITLE}</h1>
+        <div className={styles.containerPage}>
+            <h1>{REGISTER_PAGE.TITLE}</h1>
 
-          <form onSubmit={handleSubmit} method={METHODS.POST}>
+            <form onSubmit={handleSubmit} method={METHODS.POST}>
 
                 {/* INPUT NAME */}
                 <input

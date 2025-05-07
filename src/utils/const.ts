@@ -26,6 +26,8 @@ export const ROUTES_APP = {
     },
 }
 
+export const MAX_LENGTH_PASSWORD = 8;
+
 export const REGISTER_PAGE = {
     TITLE: 'Register',
     FORM: {
@@ -60,7 +62,7 @@ export const REGISTER_PAGE = {
             PASSWORD: {
                 NAME: 'password',
                 ERROR: 'Contraseña requerida',
-                ERROR_INVALID: 'Contraseña inválida (min 8 caracteres)',
+                ERROR_INVALID: `Contraseña inválida (min ${MAX_LENGTH_PASSWORD} caracteres)`,
             },
             CONFIRM_PASSWORD: {
                 NAME: 'confirmPassword',
@@ -78,8 +80,6 @@ export const REGISTER_PAGE = {
         },
     }
 }
-
-export const MAX_LENGTH_PASSWORD = 8;
 
 export const ERROR_CLASS_INPUT = 'has-error';
 
