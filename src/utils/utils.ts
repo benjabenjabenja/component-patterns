@@ -8,7 +8,11 @@ class Utils {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return regex.test(value);
     }
-    
+
+    static checkUsernameAlreadyExist(username: string) {
+        const usernameAlreadyExist = 'benja dev';
+        return username.toLowerCase() === usernameAlreadyExist.toLowerCase();
+    }
     
 }
 

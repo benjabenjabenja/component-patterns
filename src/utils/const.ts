@@ -32,6 +32,7 @@ export const REGISTER_PAGE = {
         TITLE: 'Register page',
         PLACEHOLDERS: {
             NAME: 'Name',
+            USERNAME: 'Username',
             EMAIL: 'Email',
             PASSWORD: 'Password',
             CONFIRM_PASSWORD: 'Confirm Password',
@@ -45,6 +46,11 @@ export const REGISTER_PAGE = {
             NAME: {
                 NAME: 'name',
                 ERROR: 'Nombre requerido',
+            },
+            USERNAME: {
+                NAME: 'userName',
+                ERROR: 'Nombre de usuario requerido',
+                ERROR_USERNAME_EXIST: 'Nombre de usuario existente',
             },
             EMAIL: {
                 NAME: 'email',
@@ -73,8 +79,13 @@ export const REGISTER_PAGE = {
     }
 }
 
+export const MAX_LENGTH_PASSWORD = 8;
+
+export const ERROR_CLASS_INPUT = 'has-error';
+
 export const DEFAULT_STATE_REGISTER_FORM: IRegisterPage = {
     name: SIMBOLS.EMPTY_STRING,
+    userName: SIMBOLS.EMPTY_STRING,
     email: SIMBOLS.EMPTY_STRING,
     password: SIMBOLS.EMPTY_STRING,
     confirmPassword: SIMBOLS.EMPTY_STRING,
