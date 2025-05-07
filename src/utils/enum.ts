@@ -5,3 +5,6 @@ export enum METHODS {
     DELETE = 'DELETE',
 }
 
+export enum SIMBOLS {
+    EMPTY_STRING = '',
+}

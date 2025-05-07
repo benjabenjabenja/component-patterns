@@ -1,3 +1,8 @@
+//Interfaces:
+import { IRegisterPage } from '../forms/pages/RegisterPage';
+//Enums:
+import { SIMBOLS } from './enum';
+
 export const ROUTES_APP = {
     HOME: {
         PATH: '/',
@@ -37,25 +42,40 @@ export const REGISTER_PAGE = {
             PASSWORD: 'password' as 'password',
         },
         INPUTS: {
-            NAME: 'name',
-            EMAIL: 'email',
-            PASSWORD: 'password',
-            CONFIRM_PASSWORD: 'confirmPassword',
+            NAME: {
+                NAME: 'name',
+                ERROR: 'Nombre requerido',
+            },
+            EMAIL: {
+                NAME: 'email',
+                ERROR: 'Email requerido',
+                ERROR_INVALID: 'Email inválido',
+            },
+            PASSWORD: {
+                NAME: 'password',
+                ERROR: 'Contraseña requerida',
+                ERROR_INVALID: 'Contraseña inválida (min 8 caracteres)',
+            },
+            CONFIRM_PASSWORD: {
+                NAME: 'confirmPassword',
+                ERROR: 'Confirmar contraseña requerida',
+                ERROR_INVALID: 'Contraseñas no coinciden',
+            },
         },
         BUTTON: {
-            LABEL: 'Register',
+            LABEL: 'Enviar',
             TYPE: 'submit' as 'submit',
+        },
+        BUTTON_CLEAR: {
+            LABEL: 'Limpiar',
+            TYPE: 'button' as 'button',
         },
     }
 }
 
-export const DEFAULT_STATE_REGISTER_FORM = {
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-}
-
-export const SIMBOLS = {
-    EMPTY_STRING: '',
+export const DEFAULT_STATE_REGISTER_FORM: IRegisterPage = {
+    name: SIMBOLS.EMPTY_STRING,
+    email: SIMBOLS.EMPTY_STRING,
+    password: SIMBOLS.EMPTY_STRING,
+    confirmPassword: SIMBOLS.EMPTY_STRING,
 }
