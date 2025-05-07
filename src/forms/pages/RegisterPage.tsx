@@ -64,7 +64,7 @@ const RegisterPage: React.FC = () => {
                     onChange={handleInputChange}
                 />
                 {Utils.isEmpty(formData.email) && <ErrorLabel>{REGISTER_PAGE.FORM.INPUTS.EMAIL.ERROR}</ErrorLabel>}
-                {!Utils.isEmail(formData.email) && <ErrorLabel>{REGISTER_PAGE.FORM.INPUTS.EMAIL.ERROR}</ErrorLabel>}
+                {(formData.email && !Utils.isEmail(formData.email)) && <ErrorLabel>{REGISTER_PAGE.FORM.INPUTS.EMAIL.ERROR_INVALID}</ErrorLabel>}
 
                 {/* INPUT PASSWORD */}
                 <input
@@ -76,7 +76,7 @@ const RegisterPage: React.FC = () => {
                     onChange={handleInputChange}
                 />
                 {Utils.isEmpty(formData?.password) && <ErrorLabel>{REGISTER_PAGE.FORM.INPUTS.PASSWORD.ERROR}</ErrorLabel>}
-                {formData?.password?.length < 8 && <ErrorLabel>{REGISTER_PAGE.FORM.INPUTS.PASSWORD.ERROR_INVALID}</ErrorLabel>}
+                {(formData?.password && formData?.password.length < 8) && <ErrorLabel>{REGISTER_PAGE.FORM.INPUTS.PASSWORD.ERROR_INVALID}</ErrorLabel>}
 
                 {/* INPUT CONFIRM PASSWORD */}
                 <input
