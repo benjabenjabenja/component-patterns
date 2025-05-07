@@ -2,6 +2,7 @@
 import AboutPage from "../components/AboutPage";
 import HomePage from "../components/HomePage";
 import UsersPage from "../components/UsersPage";
+import RegisterPage from "../forms/pages/RegisterPage";
 //Utils:
 import { ROUTES_APP } from "../utils/const";
 
@@ -32,5 +33,10 @@ export const routes: IRoute[] = [
         name: ROUTES_APP.USER.NAME,
         to: ROUTES_APP.USER.TO,
     },
-    
+    {
+        path: ROUTES_APP.REGISTER.PATH,
+        Component: RegisterPage,
+        name: ROUTES_APP.REGISTER.NAME,
+        to: ROUTES_APP.REGISTER.TO,
+    },
 ];
