@@ -2,7 +2,8 @@
 import AboutPage from "../components/AboutPage";
 import HomePage from "../components/HomePage";
 import UsersPage from "../components/UsersPage";
-import RegisterPage from "../forms/pages/RegisterPage";
+import FormikBasic from "../forms/pages/Formik/FormikBasic";
+import RegisterPage from "../forms/pages/RegisterPage/RegisterPage";
 //Utils:
 import { ROUTES_APP } from "../utils/const";
 
@@ -38,5 +39,11 @@ export const routes: IRoute[] = [
         Component: RegisterPage,
         name: ROUTES_APP.REGISTER.NAME,
         to: ROUTES_APP.REGISTER.TO,
+    },
+    {
+        path: ROUTES_APP.FORMIK.PATH,
+        Component: FormikBasic,
+        name: ROUTES_APP.FORMIK.NAME,
+        to: ROUTES_APP.FORMIK.TO,
     },
 ];

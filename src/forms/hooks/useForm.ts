@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 export interface UseFormProps {
     initialValues: any;
@@ -6,6 +6,17 @@ export interface UseFormProps {
 
 export const useForm = <T>(initialValues: T) => {
     const [formData, setFormData] = useState<T>({ ...initialValues });
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setFormData({
+            ...formData,
+            [e.target.name as keyof T]: e.target.value as T[keyof T]
+        });
+    }
+
+    const resetForm = useCallback(() => {
+        setFormData({ ...initialValues });
+    }, [initialValues]);
 
     useEffect(() => {
         const formDateStorage = localStorage.getItem('formData');
@@ -18,18 +29,7 @@ export const useForm = <T>(initialValues: T) => {
             resetForm();
         }
 
-    }, []);
-
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setFormData({
-            ...formData,
-            [e.target.name as keyof T]: e.target.value as T[keyof T]
-        });
-    }
-
-    const resetForm = () => {
-        setFormData({ ...initialValues });
-    }
+    }, [resetForm]);
 
     return {
         formData,

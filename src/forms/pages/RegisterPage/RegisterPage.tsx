@@ -1,18 +1,18 @@
 import React from 'react';
 //Hooks:
-import { useForm } from '../hooks/useForm';
+import { useForm } from '../../hooks/useForm';
 //Utils:
-import Utils from '../../utils/utils';
+import Utils from '../../../utils/utils';
 import {
     DEFAULT_STATE_REGISTER_FORM,
     REGISTER_PAGE,
     MAX_LENGTH_PASSWORD,
     ERROR_CLASS_INPUT
-} from '../../utils/const';
-import { METHODS, SIMBOLS } from '../../utils/enum';
+} from '../../../utils/const';
+import { METHODS, SIMBOLS } from '../../../utils/enum';
 //Styles: 
 import styles from './RegisterPage.module.css';
-import '../styles/styles.css';
+import '../../styles/styles.css';
 
 const ErrorLabel = ({ children }: { children: React.ReactNode }) => (<span>{children}</span>);
 

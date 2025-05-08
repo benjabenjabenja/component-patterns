@@ -1,0 +1,17 @@
+.containerPage {
+    margin-left: 1rem;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.label:not(:first-child) {
+    margin-top: 1rem;
+}
+
+.buttonSubmit {
+    margin-top: 1rem;
+}

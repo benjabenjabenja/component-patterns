@@ -8,3 +8,9 @@ export enum METHODS {
 export enum SIMBOLS {
     EMPTY_STRING = '',
 }
+
+export enum INPUT_TYPE {
+    TEXT = 'text',
+    EMAIL = 'email',
+    PASSWORD = 'password',
+}
