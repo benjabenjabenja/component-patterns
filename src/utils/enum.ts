@@ -15,4 +15,5 @@ export enum INPUT_TYPE {
     PASSWORD = 'password',
     CHECKBOX = 'checkbox',
     SELECT = 'select',
+    DATE = 'date',
 }

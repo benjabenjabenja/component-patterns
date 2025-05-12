@@ -37,12 +37,13 @@ const DynamicForm: React.FC = () => {
                                             label={label}
                                             placeholder={placeholder}
                                         >
-                                            {options && options.map(({ value, label }) => (
-                                                <option key={value} value={value}>{label}</option>
+                                            {options && options.map(({ id, value, label }) => (
+                                                <option key={id} value={id}>{label}</option>
                                             ))}
                                         </SelectInputField>
                                     )
                                 }
+
                                 if (type === INPUT_TYPE.CHECKBOX) {
                                     return (
                                         <CheckboxInputField
@@ -53,6 +54,7 @@ const DynamicForm: React.FC = () => {
                                         />
                                     )
                                 }
+
                                 return (
                                     <InputTextField
                                         key={name}

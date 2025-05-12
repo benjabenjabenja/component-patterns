@@ -4,21 +4,28 @@
         "name": "name",
         "placeholder": "Name",
         "label": "Name",
-        "value": "Benja"
+        "value": ""
     },
     {
         "type": "text",
         "name": "lastName",
         "placeholder": "Last Name",
         "label": "Last Name",
-        "value": "Dev"
+        "value": ""
     },
     {
         "type": "email",
         "name": "email",
-        "placeholder": "Email",
+        "placeholder": "benja.dev@example.com",
         "label": "Email",
-        "value": "benja@gmail.com"
+        "value": ""
+    },
+    {
+        "type": "date",
+        "name": "birthday",
+        "label": "Birthday",
+        "placeholder": "01/01/2025",
+        "value": ""
     },
     {
         "type": "select",
@@ -27,24 +34,29 @@
         "label": "Country",
         "value": "",
         "options": [
-            {
+            {   
+                "id": 0,
                 "value": "",
                 "label": "Select a country"
             },
             {
-                "value": "Argentina",
+                "id": 1,
+                "value": "argentina",
                 "label": "Argentina"
             },
             {
-                "value": "Chile",
+                "id": 2,
+                "value": "chile",
                 "label": "Chile"
             },
             {
-                "value": "Uruguay",
+                "id": 3,
+                "value": "uruguay",
                 "label": "Uruguay"
             },
             {
-                "value": "Paraguay",
+                "id": 4,
+                "value": "paraguay",
                 "label": "Paraguay"
             }                
         ]
