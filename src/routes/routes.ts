@@ -3,6 +3,8 @@ import AboutPage from "../components/AboutPage";
 import HomePage from "../components/HomePage";
 import UsersPage from "../components/UsersPage";
 import FormikBasic from "../forms/pages/Formik/FormikBasic";
+import FormikComponents from "../forms/pages/FormikComponents/FormikComponents";
+import FormikYup from "../forms/pages/FormikYup/FormikYup";
 import RegisterPage from "../forms/pages/RegisterPage/RegisterPage";
 //Utils:
 import { ROUTES_APP } from "../utils/const";
@@ -45,5 +47,17 @@ export const routes: IRoute[] = [
         Component: FormikBasic,
         name: ROUTES_APP.FORMIK.NAME,
         to: ROUTES_APP.FORMIK.TO,
+    },
+    {
+        path: ROUTES_APP.FORMIK_YUP.PATH,
+        Component: FormikYup,
+        name: ROUTES_APP.FORMIK_YUP.NAME,
+        to: ROUTES_APP.FORMIK_YUP.TO,
+    },
+    {
+        path: ROUTES_APP.FORMIK_COMPONENTS.PATH,
+        Component: FormikComponents,
+        name: ROUTES_APP.FORMIK_COMPONENTS.NAME,
+        to: ROUTES_APP.FORMIK_COMPONENTS.TO,
     },
 ];

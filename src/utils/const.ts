@@ -30,6 +30,16 @@ export const ROUTES_APP = {
         NAME: 'Formik Basic',
         TO: '/formik-basic',
     },
+    FORMIK_YUP: {
+        PATH: '/formik-yup',
+        NAME: 'Formik Yup',
+        TO: '/formik-yup',
+    },
+    FORMIK_COMPONENTS: {
+        PATH: '/formik-components',
+        NAME: 'Formik Components',
+        TO: '/formik-components',
+    },
 }
 
 export const MAX_LENGTH_PASSWORD = 8;
@@ -107,6 +117,8 @@ export const DEFAULT_STATE_FORMIK_BASIC: IFormikBasic = {
 
 export const FORM_FORMIK_BASIC = {
     TITLE: 'Formik Basic',
+    TITLE_COMPONENTS: 'Formik Components',
+    TITLE_YUP: 'Formik - Yup',
     FORM: {
         TITLE: 'Formik Basic',
         PLACEHOLDERS: {
@@ -114,12 +126,15 @@ export const FORM_FORMIK_BASIC = {
             USERNAME: 'UserName',
             EMAIL: 'Email',
             PASSWORD: 'Password',
-            CONFIRM_PASSWORD: 'Confirm Password',   
+            CONFIRM_PASSWORD: 'Confirm Password',
+            TERMS: 'Acepto los términos y condiciones',
+            SELECT: 'Selecciona una opción',
         },
         TYPES: {
             TEXT: INPUT_TYPE.TEXT as 'text',
             EMAIL: INPUT_TYPE.EMAIL as 'email',
             PASSWORD: INPUT_TYPE.PASSWORD as 'password',
+            CHECKBOX: INPUT_TYPE.CHECKBOX as 'checkbox',
         },
         INPUTS: {
             NAME: {
@@ -133,6 +148,7 @@ export const FORM_FORMIK_BASIC = {
             EMAIL: {
                 NAME: 'email',
                 ERROR: 'Email requerido',
+                ERROR_INVALID: 'Email inválido',
             },
             PASSWORD: {
                 NAME: 'password',
@@ -141,12 +157,38 @@ export const FORM_FORMIK_BASIC = {
             CONFIRM_PASSWORD: {
                 NAME: 'confirmPassword',
                 ERROR: 'Confirmar contraseña requerida',
+                ERROR_INVALID: 'Contraseñas no coinciden',
+            },
+            TERMS: {
+                NAME: 'terms',
+                ERROR: 'Debes aceptar los términos y condiciones',
+            },
+            SELECT: {
+                NAME: 'select',
+                ERROR: 'Debes seleccionar una opción',
+                ERROR_INVALID: 'Debes seleccionar una opción válida (opción predeterminada no válida)',
             },
         },
         BUTTON: {
             LABEL: 'Enviar',
             TYPE: 'submit' as 'submit',
         },
+        OPTIONS: {
+            SELECT: [
+                {
+                    VALUE: '1',
+                    LABEL: 'Opción 1',
+                },
+                {
+                    VALUE: '2',
+                    LABEL: 'Opción 2',
+                },
+                {
+                    VALUE: '3',
+                    LABEL: 'Opción 3',
+                },
+            ]
+        }
     },
 }
 
