@@ -13,7 +13,7 @@ import stylesFormikComponents from './FormikComponents.module.css';
 const FormikComponents: React.FC = () => {
 
     const onSubmit = (values: IFormikBasic) => {
-        console.log(values);
+        console.log({values});
     }
     
     return (
