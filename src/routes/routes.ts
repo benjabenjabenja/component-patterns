@@ -1,17 +1,19 @@
 //Pages:
 import {
+    FormikAbstract,
     FormikBasic,
     FormikComponents,
     FormikYup,
-    RegisterPage
-} from "../forms/pages";
+    RegisterPage,
+    RegisterFormikPage,
+} from '../forms/pages';
 import {
     AboutPage,
     HomePage,
     UsersPage
-} from "../components";
+} from '../components';
 //Utils:
-import { ROUTES_APP } from "../utils/const";
+import { ROUTES_APP } from '../utils/const';
 
 export interface IRoute {
     path: string;
@@ -64,4 +66,16 @@ export const routes: IRoute[] = [
         name: ROUTES_APP.FORMIK_COMPONENTS.NAME,
         to: ROUTES_APP.FORMIK_COMPONENTS.TO,
     },
+    {
+        path: ROUTES_APP.FORMIK_ABSTRACT.PATH,
+        Component: FormikAbstract,
+        name: ROUTES_APP.FORMIK_ABSTRACT.NAME,
+        to: ROUTES_APP.FORMIK_ABSTRACT.TO,
+    },
+    {
+        path: ROUTES_APP.REGISTER_FORMIK.PATH,
+        Component: RegisterFormikPage,
+        name: ROUTES_APP.REGISTER_FORMIK.NAME,
+        to: ROUTES_APP.REGISTER_FORMIK.TO,
+    }
 ];

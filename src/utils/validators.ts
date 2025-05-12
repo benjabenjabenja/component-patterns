@@ -1,6 +1,7 @@
 import * as Yup from 'yup';
 //Utils:
-import { FORM_FORMIK_BASIC } from "./const";
+import { FORM_FORMIK_BASIC, REGISTER_FORMIK_PAGE } from "./const";
+import { IRegisterFormikPage } from '../forms/pages/RegisterFormikPage/RegisterFormikPage';
 
 export const registerSchemaValidators = Yup.object({
     name           : Yup.string()
@@ -20,3 +21,26 @@ export const registerSchemaValidators = Yup.object({
                         .required(FORM_FORMIK_BASIC.FORM.INPUTS.SELECT.ERROR)
                         .notOneOf([FORM_FORMIK_BASIC.FORM.OPTIONS.SELECT[0].VALUE], FORM_FORMIK_BASIC.FORM.INPUTS.SELECT.ERROR_INVALID)
 })
+
+
+const MIN_LENGTH_NAME = 2;
+const MAX_LENGTH_NAME = 15;
+const MIN_LENGTH_PASSWORD = 6;
+
+export const registerFormikSchemaValidators: Yup.ObjectSchema<IRegisterFormikPage> = Yup.object({
+    name: Yup.string()
+            .required(REGISTER_FORMIK_PAGE.VALIDATORS.ERRORS.REQUIRED(REGISTER_FORMIK_PAGE.FORM.INPUTS.NAME.NAME))
+            .min(MIN_LENGTH_NAME, REGISTER_FORMIK_PAGE.VALIDATORS.ERRORS.MIN(MIN_LENGTH_NAME))
+            .max(MAX_LENGTH_NAME, REGISTER_FORMIK_PAGE.VALIDATORS.ERRORS.MAX(MAX_LENGTH_NAME)),
+    email: Yup.string()
+            .email(REGISTER_FORMIK_PAGE.VALIDATORS.ERRORS.EMAIL)
+            .required(REGISTER_FORMIK_PAGE.VALIDATORS.ERRORS.REQUIRED(REGISTER_FORMIK_PAGE.FORM.INPUTS.EMAIL.NAME)),
+    password: Yup.string()
+            .required(REGISTER_FORMIK_PAGE.VALIDATORS.ERRORS.REQUIRED(REGISTER_FORMIK_PAGE.FORM.INPUTS.PASSWORD.NAME))
+            .min(MIN_LENGTH_PASSWORD, REGISTER_FORMIK_PAGE.VALIDATORS.ERRORS.MIN(MIN_LENGTH_PASSWORD)),
+    confirmPassword: Yup.string()
+            .required(REGISTER_FORMIK_PAGE.VALIDATORS.ERRORS.REQUIRED(REGISTER_FORMIK_PAGE.FORM.INPUTS.CONFIRM_PASSWORD.NAME))
+            .min(MIN_LENGTH_PASSWORD, REGISTER_FORMIK_PAGE.VALIDATORS.ERRORS.MIN(MIN_LENGTH_PASSWORD))
+            .oneOf([Yup.ref(REGISTER_FORMIK_PAGE.FORM.INPUTS.PASSWORD.NAME), REGISTER_FORMIK_PAGE.VALIDATORS.ERRORS.CONFIRM_PASSWORD]),
+})
+

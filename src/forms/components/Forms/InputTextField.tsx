@@ -3,6 +3,9 @@ import React from 'react'
 import { ErrorMessage, useField } from 'formik'
 //Utils:
 import { INPUT_TYPE } from '../../../utils/enum'
+//Styles:
+import '../../styles/styles.css';
+
 
 export interface InputTextFieldProps {
     name: string;
@@ -17,9 +20,9 @@ const InputTextField: React.FC<InputTextFieldProps> = ({label, ...rest}: InputTe
 
     return (
         <>
-            <label htmlFor={rest?.id || rest.name}>{label}</label>
+            <label className="labelCheckTerms" htmlFor={rest?.id || rest.name}>{label}</label>
             <input type={rest.type} placeholder={rest.placeholder} {...field} {...rest} />
-            <ErrorMessage name={rest.name} component="span" />
+            <ErrorMessage className="error-message" name={rest.name} component="span" />
 
             {/* 
                 OTRA FORMA DE HACERLO: 

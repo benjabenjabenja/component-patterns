@@ -1,4 +1,6 @@
 import React from 'react';
+//Components:
+import { ErrorLabel } from '../../components/Forms';
 //Hooks:
 import { useForm } from '../../hooks/useForm';
 //Utils:
@@ -13,9 +15,6 @@ import { METHODS, SIMBOLS } from '../../../utils/enum';
 //Styles: 
 import styles from './RegisterPage.module.css';
 import '../../styles/styles.css';
-
-const ErrorLabel = ({ children }: { children: React.ReactNode }) => (<span>{children}</span>);
-
 
 export interface IRegisterPage {
     name: string;
@@ -40,7 +39,7 @@ const RegisterPage: React.FC = () => {
         localStorage.setItem('formData', JSON.stringify(formData));
     }
 
-  return (
+    return (
         <div className={styles.containerPage}>
             <h1>{REGISTER_PAGE.TITLE}</h1>
 
@@ -56,7 +55,7 @@ const RegisterPage: React.FC = () => {
                     onChange={handleInputChange}
                 />
                 {Utils.isEmpty(formData.name) && (
-                  <ErrorLabel>{REGISTER_PAGE.FORM.INPUTS.NAME.ERROR}</ErrorLabel>)}
+                    <ErrorLabel>{REGISTER_PAGE.FORM.INPUTS.NAME.ERROR}</ErrorLabel>)}
               
                 {/* INPUT USERNAME */}
                 <input
@@ -76,7 +75,7 @@ const RegisterPage: React.FC = () => {
                 {/* INPUT EMAIL */}
                 <input
                     className={`${(
-                        Utils.isEmpty(formData?.email) || 
+                        Utils.isEmpty(formData?.email) ||
                         !Utils.isEmail(formData?.email)) && ERROR_CLASS_INPUT}`}
                     type={REGISTER_PAGE.FORM.TYPES.EMAIL}
                     placeholder={REGISTER_PAGE.FORM.PLACEHOLDERS.EMAIL}
@@ -92,7 +91,7 @@ const RegisterPage: React.FC = () => {
                 {/* INPUT PASSWORD */}
                 <input
                     className={`${(
-                        Utils.isEmpty(formData?.password) || 
+                        Utils.isEmpty(formData?.password) ||
                         formData?.password?.length < 8) && ERROR_CLASS_INPUT}`}
                     type={REGISTER_PAGE.FORM.TYPES.PASSWORD}
                     placeholder={REGISTER_PAGE.FORM.PLACEHOLDERS.PASSWORD}
@@ -108,8 +107,8 @@ const RegisterPage: React.FC = () => {
                 {/* INPUT CONFIRM PASSWORD */}
                 <input
                     className={`${(
-                        Utils.isEmpty(formData?.confirmPassword) || 
-                        formData?.confirmPassword !== formData?.password ) && ERROR_CLASS_INPUT}`}
+                        Utils.isEmpty(formData?.confirmPassword) ||
+                        formData?.confirmPassword !== formData?.password) && ERROR_CLASS_INPUT}`}
                     type={REGISTER_PAGE.FORM.TYPES.PASSWORD}
                     placeholder={REGISTER_PAGE.FORM.PLACEHOLDERS.CONFIRM_PASSWORD}
                     name={REGISTER_PAGE.FORM.INPUTS.CONFIRM_PASSWORD.NAME}
@@ -124,7 +123,7 @@ const RegisterPage: React.FC = () => {
                 )}
 
                 {/* BUTTON REGISTER */}
-                <button 
+                <button
                     type={REGISTER_PAGE.FORM.BUTTON.TYPE}
                     className={styles.registerButton}
                 >{REGISTER_PAGE.FORM.BUTTON.LABEL}</button>
@@ -136,9 +135,9 @@ const RegisterPage: React.FC = () => {
                     onClick={() => resetForm()}
                 >{REGISTER_PAGE.FORM.BUTTON_CLEAR.LABEL}</button>
               
-          </form>
-      </div>
-  )
-}
+            </form>
+        </div>
+    )
+};
 
 export default RegisterPage

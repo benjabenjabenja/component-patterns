@@ -40,6 +40,16 @@ export const ROUTES_APP = {
         NAME: 'Formik Components',
         TO: '/formik-components',
     },
+    FORMIK_ABSTRACT: {
+        PATH: '/formik-abstract',
+        NAME: 'Formik Abstract',
+        TO: '/formik-abstract',
+    },
+    REGISTER_FORMIK: {
+        PATH: '/register-formik',
+        NAME: 'Register Formik',
+        TO: '/register-formik',
+    }
 }
 
 export const MAX_LENGTH_PASSWORD = 8;
@@ -119,6 +129,7 @@ export const FORM_FORMIK_BASIC = {
     TITLE: 'Formik Basic',
     TITLE_COMPONENTS: 'Formik Components',
     TITLE_YUP: 'Formik - Yup',
+    TITLE_ABSTRACT: 'Formik Abstract',
     FORM: {
         TITLE: 'Formik Basic',
         PLACEHOLDERS: {
@@ -189,6 +200,60 @@ export const FORM_FORMIK_BASIC = {
                 },
             ]
         }
+    },
+}
+
+export const REGISTER_FORMIK_PAGE = {
+    TITLE: 'Register Formik',
+    INITIAL_VALUES: {
+        name: SIMBOLS.EMPTY_STRING,
+        email: SIMBOLS.EMPTY_STRING,
+        password: SIMBOLS.EMPTY_STRING,
+        confirmPassword: SIMBOLS.EMPTY_STRING,
+    },
+    VALIDATORS: {
+        ERRORS: {
+            REQUIRED: (name: string) => `Campo ${name} requerido`,
+            MIN: (min: number) => `Mínimo ${min} caracteres`,
+            MAX: (max: number) => `Máximo ${max} caracteres`,
+            EMAIL: 'Email inválido',
+            CONFIRM_PASSWORD: 'Contraseñas no coinciden',
+        },        
+    },
+    FORM: {
+        PLACEHOLDERS: {
+            NAME: 'Name',
+            EMAIL: 'Email',
+            PASSWORD: 'Password',
+            CONFIRM_PASSWORD: 'Confirm Password',
+        },
+        TYPES: {
+            TEXT: INPUT_TYPE.TEXT as 'text',
+            EMAIL: INPUT_TYPE.EMAIL as 'email',
+            PASSWORD: INPUT_TYPE.PASSWORD as 'password',
+        },
+        INPUTS: {
+            NAME: {
+                NAME: 'name',
+            },
+            EMAIL: {
+                NAME: 'email'
+            },
+            PASSWORD: {
+                NAME: 'password'
+            },
+            CONFIRM_PASSWORD: {
+                NAME: 'confirmPassword'
+            },
+        },
+    },
+    BUTTON: {
+        LABEL: 'Registrarse !',
+        TYPE: 'submit' as 'submit',
+    },
+    BUTTON_CLEAR: {
+        LABEL: 'Limpiar',
+        TYPE: 'button' as 'button',
     },
 }
 

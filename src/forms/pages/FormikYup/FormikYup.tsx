@@ -1,4 +1,6 @@
 import React from 'react'
+//Components:
+import { ErrorLabel } from '../../components/Forms';
 //Interfaces:
 import { IFormikBasic } from '../Formik/FormikBasic';
 //Lib:
@@ -39,7 +41,7 @@ const FormikYup: React.FC = () => {
                         {...getFieldProps(FORM_FORMIK_BASIC.FORM.INPUTS.NAME.NAME)}
                     />
                 </label>
-                {(errors.name && touched.name) && <span>{errors.name}</span>}
+                {(errors.name && touched.name) && <ErrorLabel>{errors.name}</ErrorLabel>}
 
                 <label className={styles.label} htmlFor={FORM_FORMIK_BASIC.FORM.INPUTS.USERNAME.NAME}>
                     {FORM_FORMIK_BASIC.FORM.PLACEHOLDERS.USERNAME}
@@ -49,7 +51,7 @@ const FormikYup: React.FC = () => {
                         {...getFieldProps(FORM_FORMIK_BASIC.FORM.INPUTS.USERNAME.NAME)}
                     />
                 </label>
-                {(errors.userName && touched.userName) && <span>{errors.userName}</span>}
+                {(errors.userName && touched.userName) && <ErrorLabel>{errors.userName}</ErrorLabel>}
 
                 <label className={styles.label} htmlFor={FORM_FORMIK_BASIC.FORM.INPUTS.EMAIL.NAME}>
                     {FORM_FORMIK_BASIC.FORM.PLACEHOLDERS.EMAIL}
@@ -59,7 +61,7 @@ const FormikYup: React.FC = () => {
                         {...getFieldProps(FORM_FORMIK_BASIC.FORM.INPUTS.EMAIL.NAME)}
                     />
                 </label>
-                {(errors.email && touched.email) && <span>{errors.email}</span>}
+                {(errors.email && touched.email) && <ErrorLabel>{errors.email}</ErrorLabel>}
 
                 <label className={styles.label} htmlFor={FORM_FORMIK_BASIC.FORM.INPUTS.PASSWORD.NAME}>
                     {FORM_FORMIK_BASIC.FORM.PLACEHOLDERS.PASSWORD}
@@ -69,7 +71,7 @@ const FormikYup: React.FC = () => {
                         {...getFieldProps(FORM_FORMIK_BASIC.FORM.INPUTS.PASSWORD.NAME)}
                     />
                 </label>
-                {(errors.password && touched.password) && <span>{errors.password}</span>}
+                {(errors.password && touched.password) && <ErrorLabel>{errors.password}</ErrorLabel>}
 
                 <label className={styles.label} htmlFor={FORM_FORMIK_BASIC.FORM.INPUTS.CONFIRM_PASSWORD.NAME}>
                     {FORM_FORMIK_BASIC.FORM.PLACEHOLDERS.CONFIRM_PASSWORD}
@@ -79,7 +81,7 @@ const FormikYup: React.FC = () => {
                         {...getFieldProps(FORM_FORMIK_BASIC.FORM.INPUTS.CONFIRM_PASSWORD.NAME)}
                     />
                 </label>
-                {(errors.confirmPassword && touched.confirmPassword) && <span>{errors.confirmPassword}</span>}
+                {(errors.confirmPassword && touched.confirmPassword) && <ErrorLabel>{errors.confirmPassword}</ErrorLabel>}
 
                 <button
                     className={styles.buttonSubmit}

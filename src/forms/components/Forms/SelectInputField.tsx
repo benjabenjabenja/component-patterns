@@ -13,9 +13,9 @@ const SelectInputField: React.FC<SelectInputFieldProps> = ({label, ...rest}: Sel
     
     return (
         <>
-            <label htmlFor={rest?.id || rest.name}>{label}</label>
+            <label className="labelCheckTerms" htmlFor={rest?.id || rest.name}>{label}</label>
             <select {...field} {...rest} />
-            <ErrorMessage name={rest.name} component="span" />
+            <ErrorMessage className="error-message" name={rest.name} component="span" />
 
             {/* 
                 OTRA FORMA DE HACERLO: 

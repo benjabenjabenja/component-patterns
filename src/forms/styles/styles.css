@@ -25,3 +25,7 @@ span, .error-message {
 .has-error {
     border: 1px solid red;
 }
+
+.labelCheckTerms {
+    margin-top: 10px;
+}

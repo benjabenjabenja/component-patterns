@@ -6,6 +6,7 @@ import { DEFAULT_STATE_FORMIK_BASIC, FORM_FORMIK_BASIC } from '../../../utils/co
 //Styles:
 import styles from './FormikBasic.module.css';
 import Utils from '../../../utils/utils';
+import { ErrorLabel } from '../../components/Forms';
 
 
 export interface IFormikBasic {
@@ -90,7 +91,7 @@ const FormikBasic: React.FC = () => {
                         value={name}
                     />
                 </label>
-                {(errors.name && touched.name) && <span>{errors.name}</span>}
+                {(errors.name && touched.name) && <ErrorLabel>{errors.name}</ErrorLabel>}
 
                 <label className={styles.label} htmlFor={FORM_FORMIK_BASIC.FORM.INPUTS.USERNAME.NAME}>
                     {FORM_FORMIK_BASIC.FORM.PLACEHOLDERS.USERNAME}
@@ -103,7 +104,7 @@ const FormikBasic: React.FC = () => {
                         value={userName}
                     />
                 </label>
-                {(errors.userName && touched.userName) && <span>{errors.userName}</span>}
+                {(errors.userName && touched.userName) && <ErrorLabel>{errors.userName}</ErrorLabel>}
 
                 <label className={styles.label} htmlFor={FORM_FORMIK_BASIC.FORM.INPUTS.EMAIL.NAME}>
                     {FORM_FORMIK_BASIC.FORM.PLACEHOLDERS.EMAIL}
@@ -116,7 +117,7 @@ const FormikBasic: React.FC = () => {
                         value={email}
                     />
                 </label>
-                {(errors.email && touched.email) && <span>{errors.email}</span>}
+                {(errors.email && touched.email) && <ErrorLabel>{errors.email}</ErrorLabel>}
 
                 <label className={styles.label} htmlFor={FORM_FORMIK_BASIC.FORM.INPUTS.PASSWORD.NAME}>
                     {FORM_FORMIK_BASIC.FORM.PLACEHOLDERS.PASSWORD}
@@ -129,7 +130,7 @@ const FormikBasic: React.FC = () => {
                         value={password}
                     />
                 </label>
-                {(errors.password && touched.password) && <span>{errors.password}</span>}
+                {(errors.password && touched.password) && <ErrorLabel>{errors.password}</ErrorLabel>}
 
                 <label className={styles.label} htmlFor={FORM_FORMIK_BASIC.FORM.INPUTS.CONFIRM_PASSWORD.NAME}>
                     {FORM_FORMIK_BASIC.FORM.PLACEHOLDERS.CONFIRM_PASSWORD}
@@ -142,7 +143,7 @@ const FormikBasic: React.FC = () => {
                         value={confirmPassword}
                     />
                 </label>
-                {(errors.confirmPassword && touched.confirmPassword) && <span>{errors.confirmPassword}</span>}
+                {(errors.confirmPassword && touched.confirmPassword) && <ErrorLabel>{errors.confirmPassword}</ErrorLabel>}
 
                 <button
                     className={styles.buttonSubmit}

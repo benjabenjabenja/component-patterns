@@ -15,11 +15,11 @@ const CheckboxInputField: React.FC<CheckboxInputFieldProps> = ({ label, ...props
     
     return (
         <>
-            <label>
+            <label className="labelCheckTerms">
                 <input type={INPUT_TYPE.CHECKBOX} {...field} {...props} />
                 {label}
             </label>
-            <ErrorMessage name={props.name} component="span" />
+            <ErrorMessage className="error-message" name={props.name} component="span" />
         </>
     )
 };
