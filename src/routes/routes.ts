@@ -6,6 +6,7 @@ import {
     FormikYup,
     RegisterPage,
     RegisterFormikPage,
+    DynamicForm,
 } from '../forms/pages';
 import {
     AboutPage,
@@ -77,5 +78,11 @@ export const routes: IRoute[] = [
         Component: RegisterFormikPage,
         name: ROUTES_APP.REGISTER_FORMIK.NAME,
         to: ROUTES_APP.REGISTER_FORMIK.TO,
+    },
+    {
+        path: ROUTES_APP.DYNAMIC_FORM.PATH,
+        Component: DynamicForm,
+        name: ROUTES_APP.DYNAMIC_FORM.NAME,
+        to: ROUTES_APP.DYNAMIC_FORM.TO,
     }
 ];

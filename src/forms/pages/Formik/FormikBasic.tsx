@@ -1,12 +1,16 @@
 import React from 'react'
+//Components:
+import { ErrorLabel } from '../../components/Forms';
 //Lib:
 import { useFormik } from 'formik';
 //Utils:
-import { DEFAULT_STATE_FORMIK_BASIC, FORM_FORMIK_BASIC } from '../../../utils/const';
+import Utils from '../../../utils/utils';
+import {
+    DEFAULT_STATE_FORMIK_BASIC,
+    FORM_FORMIK_BASIC
+} from '../../../utils/const';
 //Styles:
 import styles from './FormikBasic.module.css';
-import Utils from '../../../utils/utils';
-import { ErrorLabel } from '../../components/Forms';
 
 
 export interface IFormikBasic {

@@ -49,6 +49,11 @@ export const ROUTES_APP = {
         PATH: '/register-formik',
         NAME: 'Register Formik',
         TO: '/register-formik',
+    },
+    DYNAMIC_FORM: {
+        PATH: '/dynamic-form',
+        NAME: 'Dynamic Form',
+        TO: '/dynamic-form',
     }
 }
 
@@ -256,4 +261,18 @@ export const REGISTER_FORMIK_PAGE = {
         TYPE: 'button' as 'button',
     },
 }
+
+export const DYNAMIC_FORM = {
+    TITLE: 'Dynamic Form',
+    BUTTON: {
+        LABEL: 'Enviar',
+        TYPE: 'submit' as 'submit',
+    },
+    BUTTON_CLEAR: {
+        LABEL: 'Volver a los valores iniciales',
+        TYPE: 'button' as 'button',
+    },
+}
+
+export const DEFAULT_STATE_DYNAMIC_FORM: { [key: string]: any } = {}
 

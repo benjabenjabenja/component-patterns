@@ -13,6 +13,13 @@ class Utils {
         const usernameAlreadyExist = 'benja dev';
         return username.toLowerCase() === usernameAlreadyExist.toLowerCase();
     }
+
+    static getInitialValues(formData: any) {
+        return formData.reduce((acc: { [key: string]: any }, curr: any) => {
+            acc[curr.name] = curr.value;
+            return acc;
+        }, {});
+    }
     
 }
 
