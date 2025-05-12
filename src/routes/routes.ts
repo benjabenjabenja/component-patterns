@@ -1,11 +1,15 @@
 //Pages:
-import AboutPage from "../components/AboutPage";
-import HomePage from "../components/HomePage";
-import UsersPage from "../components/UsersPage";
-import FormikBasic from "../forms/pages/Formik/FormikBasic";
-import FormikComponents from "../forms/pages/FormikComponents/FormikComponents";
-import FormikYup from "../forms/pages/FormikYup/FormikYup";
-import RegisterPage from "../forms/pages/RegisterPage/RegisterPage";
+import {
+    FormikBasic,
+    FormikComponents,
+    FormikYup,
+    RegisterPage
+} from "../forms/pages";
+import {
+    AboutPage,
+    HomePage,
+    UsersPage
+} from "../components";
 //Utils:
 import { ROUTES_APP } from "../utils/const";
 
