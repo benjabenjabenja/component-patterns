@@ -33,6 +33,7 @@ const FormikComponents: React.FC = () => {
                                 <Field
                                     type={FORM_FORMIK_BASIC.FORM.TYPES.TEXT}
                                     name={FORM_FORMIK_BASIC.FORM.INPUTS.NAME.NAME}
+                                    placeholder={FORM_FORMIK_BASIC.FORM.PLACEHOLDERS.NAME}
                                 />
                             </label>
                             <ErrorMessage
@@ -45,6 +46,7 @@ const FormikComponents: React.FC = () => {
                                 <Field
                                     type={FORM_FORMIK_BASIC.FORM.TYPES.TEXT}
                                     name={FORM_FORMIK_BASIC.FORM.INPUTS.USERNAME.NAME}
+                                    placeholder={FORM_FORMIK_BASIC.FORM.PLACEHOLDERS.USERNAME}
                                 />
                             </label>
                             <ErrorMessage
@@ -57,6 +59,7 @@ const FormikComponents: React.FC = () => {
                                 <Field
                                     type={FORM_FORMIK_BASIC.FORM.TYPES.EMAIL}
                                     name={FORM_FORMIK_BASIC.FORM.INPUTS.EMAIL.NAME}
+                                    placeholder={FORM_FORMIK_BASIC.FORM.PLACEHOLDERS.EMAIL}
                                 />
                             </label>
                             <ErrorMessage
@@ -69,6 +72,7 @@ const FormikComponents: React.FC = () => {
                                 <Field
                                     type={FORM_FORMIK_BASIC.FORM.TYPES.PASSWORD}
                                     name={FORM_FORMIK_BASIC.FORM.INPUTS.PASSWORD.NAME}
+                                    placeholder={FORM_FORMIK_BASIC.FORM.PLACEHOLDERS.PASSWORD}
                                 />
                             </label>
                             <ErrorMessage
@@ -81,6 +85,7 @@ const FormikComponents: React.FC = () => {
                                 <Field
                                     type={FORM_FORMIK_BASIC.FORM.TYPES.PASSWORD}
                                     name={FORM_FORMIK_BASIC.FORM.INPUTS.CONFIRM_PASSWORD.NAME}
+                                    placeholder={FORM_FORMIK_BASIC.FORM.PLACEHOLDERS.CONFIRM_PASSWORD}
                                 />
                             </label>
                             <ErrorMessage
@@ -93,6 +98,7 @@ const FormikComponents: React.FC = () => {
                                 <Field
                                     name={FORM_FORMIK_BASIC.FORM.INPUTS.SELECT.NAME}
                                     as="select"
+                                    placeholder={FORM_FORMIK_BASIC.FORM.PLACEHOLDERS.SELECT}
                                 >
                                     {FORM_FORMIK_BASIC.FORM.OPTIONS.SELECT.map((option) => (
                                         <option key={option.VALUE} value={option.VALUE}>{option.LABEL}</option>
@@ -103,7 +109,6 @@ const FormikComponents: React.FC = () => {
                                 name={FORM_FORMIK_BASIC.FORM.INPUTS.SELECT.NAME}
                                 component="span"
                             />
-
 
                             <label className={stylesFormikComponents.labelCheckTerms}>
                                 <Field
