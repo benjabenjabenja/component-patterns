@@ -19,5 +19,40 @@
         "placeholder": "Email",
         "label": "Email",
         "value": "benja@gmail.com"
+    },
+    {
+        "type": "select",
+        "name": "country",
+        "placeholder": "Country",
+        "label": "Country",
+        "value": "",
+        "options": [
+            {
+                "value": "",
+                "label": "Select a country"
+            },
+            {
+                "value": "Argentina",
+                "label": "Argentina"
+            },
+            {
+                "value": "Chile",
+                "label": "Chile"
+            },
+            {
+                "value": "Uruguay",
+                "label": "Uruguay"
+            },
+            {
+                "value": "Paraguay",
+                "label": "Paraguay"
+            }                
+        ]
+    },
+    {
+        "type": "checkbox",
+        "name": "terms",
+        "label": "I accept the terms and conditions",
+        "value": false
     }
 ]

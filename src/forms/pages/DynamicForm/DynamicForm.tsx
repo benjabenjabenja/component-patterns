@@ -1,6 +1,6 @@
 import React from 'react'
 //Components:
-import { InputTextField, SelectInputField } from '../../components/Forms';
+import { CheckboxInputField, InputTextField, SelectInputField } from '../../components/Forms';
 //Data:
 import customFormJSON from '../../data/custom-form.json';
 //Lib:
@@ -27,7 +27,7 @@ const DynamicForm: React.FC = () => {
                         <Form onSubmit={handleSubmit}>
 
                             {/* INPUTS DINAMICOS */}
-                            {customFormJSON.map(({ type, name, label, placeholder }) => {
+                            {customFormJSON.map(({ type, name, label, placeholder, options }) => {
                                 if (type === INPUT_TYPE.SELECT) {
                                     return (
                                         <SelectInputField
@@ -36,6 +36,20 @@ const DynamicForm: React.FC = () => {
                                             name={name}
                                             label={label}
                                             placeholder={placeholder}
+                                        >
+                                            {options && options.map(({ value, label }) => (
+                                                <option key={value} value={value}>{label}</option>
+                                            ))}
+                                        </SelectInputField>
+                                    )
+                                }
+                                if (type === INPUT_TYPE.CHECKBOX) {
+                                    return (
+                                        <CheckboxInputField
+                                            key={name}
+                                            type={type as INPUT_TYPE}
+                                            name={name}
+                                            label={label}
                                         />
                                     )
                                 }
