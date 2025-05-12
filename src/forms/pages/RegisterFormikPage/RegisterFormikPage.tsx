@@ -49,6 +49,7 @@ const RegisterFormikPage: React.FC = () => {
                             label={REGISTER_FORMIK_PAGE.FORM.PLACEHOLDERS.EMAIL}
                             name={REGISTER_FORMIK_PAGE.FORM.INPUTS.EMAIL.NAME}
                             placeholder={REGISTER_FORMIK_PAGE.FORM.PLACEHOLDERS.EMAIL}
+                            type={REGISTER_FORMIK_PAGE.FORM.TYPES.EMAIL as any}
                         />
 
                         {/* PASSWORD */}
