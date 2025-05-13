@@ -5,6 +5,7 @@ import { CheckboxInputField, InputTextField, SelectInputField } from '../../comp
 import customFormJSON from '../../data/custom-form.json';
 //Lib:
 import { Formik, Form } from 'formik';
+import * as Yup from 'yup';
 //Utils:
 import Utils from '../../../utils/utils';
 import { DYNAMIC_FORM } from '../../../utils/const';
@@ -18,8 +19,15 @@ interface ValidationSchema {
     message: string;
 }
 
-interface DynamicForms {
+interface OptionsSchema {
+    id: string;
+    value: string;
+    label: string;
+}
+
+interface DynamicFormSchema {
     validations?: ValidationSchema[];
+    options?: OptionsSchema[];
     [key: string]: any;
 }
 
@@ -33,7 +41,7 @@ const DynamicForm: React.FC = () => {
 
             <Formik
                 initialValues={Utils.getInitialValues(customFormJSON)}
-                validationSchema={validationSchema}
+                validationSchema={validationSchema as Yup.ObjectSchema<DynamicFormSchema>}
                 onSubmit={(values) => console.log({ values })}
             >
                 {
