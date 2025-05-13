@@ -47,7 +47,6 @@ class Utils {
                 }
             }
             acc[curr.name] = schema;
-            console.log({acc});
             return acc;
         }, {});
        

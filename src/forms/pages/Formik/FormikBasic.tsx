@@ -74,7 +74,7 @@ const FormikBasic: React.FC = () => {
     } = useFormik({
         initialValues: DEFAULT_STATE_FORMIK_BASIC,
         onSubmit: (values) => {
-            console.log(values);
+            console.log({values});
         }, 
         validate: validateFormikBasic
     })

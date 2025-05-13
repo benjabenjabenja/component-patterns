@@ -14,7 +14,7 @@ import styles from '../Formik/FormikBasic.module.css';
 const FormikYup: React.FC = () => {
 
     const onSubmit = (values: IFormikBasic) => {
-        console.log(values);
+        console.log({values});
     }
 
     const {
