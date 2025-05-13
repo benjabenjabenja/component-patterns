@@ -12,7 +12,20 @@ import { INPUT_TYPE } from '../../../utils/enum';
 //Styles:
 import styles from '../Formik/FormikBasic.module.css';
 
+interface ValidationSchema {
+    type: string;
+    value?: string;
+    message: string;
+}
+
+interface DynamicForms {
+    validations?: ValidationSchema[];
+    [key: string]: any;
+}
+
 const DynamicForm: React.FC = () => {
+
+    const validationSchema = Utils.getValidationSchema(customFormJSON);
 
     return (
         <div className={styles.containerPage}>
@@ -20,6 +33,7 @@ const DynamicForm: React.FC = () => {
 
             <Formik
                 initialValues={Utils.getInitialValues(customFormJSON)}
+                validationSchema={validationSchema}
                 onSubmit={(values) => console.log({ values })}
             >
                 {

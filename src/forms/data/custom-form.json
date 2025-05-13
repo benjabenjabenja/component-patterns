@@ -4,7 +4,19 @@
         "name": "name",
         "placeholder": "Name",
         "label": "Name",
-        "value": ""
+        "value": "",
+        "validations": [{
+            "type": "required",
+            "message": "Name is required"
+        }, {
+            "type": "minLength",
+            "value": 2,
+            "message": "Name must be at least 2 characters"
+        }, {
+            "type": "maxLength",
+            "value": 15,
+            "message": "Name must be less than 15 characters"
+        }]
     },
     {
         "type": "text",
@@ -18,7 +30,14 @@
         "name": "email",
         "placeholder": "benja.dev@example.com",
         "label": "Email",
-        "value": ""
+        "value": "",
+        "validations": [{
+            "type": "required",
+            "message": "Email is required"
+        }, {
+            "type": "email",
+            "message": "Email is invalid"
+        }]
     },
     {
         "type": "date",
@@ -59,12 +78,20 @@
                 "value": "paraguay",
                 "label": "Paraguay"
             }                
-        ]
+        ],
+        "validations": [{
+            "type": "required",
+            "message": "Country is required"
+        }]
     },
     {
         "type": "checkbox",
         "name": "terms",
         "label": "I accept the terms and conditions",
-        "value": false
+        "value": false,
+        "validations": [{
+            "type": "required",
+            "message": "Terms and conditions are required"
+        }]
     }
 ]
